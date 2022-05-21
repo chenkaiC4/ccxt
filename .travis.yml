@@ -16,6 +16,7 @@ before_install:
 - git checkout package.json package-lock.json
 - git config pull.rebase false
 - git fetch origin btse
+- git branch -a
 - git branch btse origin/btse
 - git checkout btse
 - sudo -H pip install --upgrade setuptools
