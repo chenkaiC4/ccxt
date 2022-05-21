@@ -28,8 +28,7 @@ before_install:
 - composer require --ignore-platform-reqs react/http:"^1.4.0" recoil/react:"1.0.2"
 script:
 - npm run test-base
+- npm run build
 - bash -c 'node run-tests btse --js' 2>&1
 after_failure:
 - dmesg | grep -i kill
-after_script:
-- cat ~/.npm/_logs/*-debug.log
