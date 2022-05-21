@@ -15,7 +15,7 @@ before_install:
 - npm install
 - git checkout package.json package-lock.json
 - git config pull.rebase false
-- git checkout --track -b btse remotes/origin/btse
+- git fetch origin btse:btse
 - git branch -a
 - git checkout btse
 - sudo -H pip install --upgrade setuptools
