@@ -15,6 +15,7 @@ before_install:
 - npm install
 - git checkout package.json package-lock.json
 - git config pull.rebase false
+- git fetch origin btse
 - git checkout -b btse origin/btse
 - sudo -H pip install --upgrade setuptools
 - sudo -H pip install --upgrade pip wheel requests pyopenssl
