@@ -873,10 +873,13 @@ module.exports = class btse extends Exchange {
         //     ]
         //
         // transfer to milliseconds
-        response.forEach ((r) => {
-            r[0] = r[0] * 1000;
-        });
-        return this.parseOHLCVs (response, market, timeframe, since, limit);
+        const resp = [];
+        for (let i = 0; i < response.length; i++) {
+            const oldResp = response[i];
+            oldResp[0] = oldResp[0] * 1000;
+            resp.push (oldResp);
+        }
+        return this.parseOHLCVs (resp, market, timeframe, since, limit);
     }
 
     async fetchTime (params = {}) {
